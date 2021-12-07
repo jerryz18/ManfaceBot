@@ -22,7 +22,7 @@ async def on_message(message):
   if message.content.startswith("-ym") or message.content.startswith("-yomama"):
     await message.channel.send("Yo mama is so " + random.choice(adjective) + " she " + random.choice(verb) + "!")
   if message.content.startswith("-yd") or message.content.startswith("-yodad"):
-    await message.channel.send("Yo dad is so " + random.choice(adjective) + " she " + random.choice(verb) + "!")
+    await message.channel.send("Yo dad is so " + random.choice(adjective) + " he " + random.choice(verb) + "!")
 
 my_secret = os.environ['token']
 client.run(my_secret)
