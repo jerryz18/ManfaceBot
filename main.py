@@ -17,7 +17,7 @@ async def on_message(message):
 
   verb = ["poop her pants", "got kicked out of apple bees", "went to prison", "failed elementary school",
   "walked under clock tower", "doctor pepper ", "played genshin impact", "did too much trolling",
-  "ate chungus juice", "walks her dog upside down", "uefduweudwe28du2882du82u8de2uued poop4", "poop4"]
+  "ate chungus juice", "walks the dog upside down", "uefduweudwe28du2882du82u8de2uued poop4", "poop4"]
 
   if message.content.startswith("-ym") or message.content.startswith("-yomama"):
     await message.channel.send("Yo mama is so " + random.choice(adjective) + " she " + random.choice(verb) + "!")
