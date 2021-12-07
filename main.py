@@ -1,6 +1,7 @@
 import os
 import discord
 import random
+from keep_alive import keep_alive
 
 client = discord.Client()
 
@@ -34,5 +35,7 @@ async def on_message(message):
     await message.channel.send("Yo dad is so " + random.choice(adjective) + " he " + random.choice(verb2) + "!")
   if message.content.startswith("-dn") or message.content.startswith("-deeznuts"):
     await message.channel.send("DEEZ NUTS IN YO MOUTH. GOTEEEEM")
+
+keep_alive()
 my_secret = os.environ['token']
 client.run(my_secret)
