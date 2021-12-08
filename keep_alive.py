@@ -1,15 +1,16 @@
-from flask import Flask
-from threading import Thread
+from aiohttp import web
 
-app = Flask('')
+class KeepAlive():
+  def __init__(self):
+    self.app = web.Application()
+    self.app.router.add_get('/', self.home)
 
-@app.route('/')
-def home():
-    return "Hello. I am alive!"
-
-def run():
-  app.run(host='0.0.0.0',port=8080)
-
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
+  async def run(self):
+    await web._run_app(
+      self.app,
+      host='0.0.0.0',
+      port=8080
+    )
+    
+  async def home(self, request):
+    return web.Response(text='Hello. I am alive!')
